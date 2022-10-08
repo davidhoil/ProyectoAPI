@@ -1,4 +1,4 @@
-const Department = require('../models/Department.js');
+const Department = require('../models/department.js');
 
 //CREATE
 async function createDepartment(req, res) {
