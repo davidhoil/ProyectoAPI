@@ -6,11 +6,12 @@ const {
     updateDepartment,
     deleteDepartment
 } = require('../controllers/department.js');
+const auth = require('../config/auth.js');
 
-router.get('/', getDepartments);
-router.get('/:id', getDepartment);
-router.post('/', createDepartment);
-router.patch('/:id', updateDepartment);
-router.delete('/:id', deleteDepartment);
+router.get('/', auth.optional, getDepartments);
+router.get('/:id', auth.required, getDepartment);
+router.post('/', auth.required, createDepartment);
+router.patch('/:id', auth.required, updateDepartment);
+router.delete('/:id', auth.isAdmin, deleteDepartment);
 
 module.exports = router; 

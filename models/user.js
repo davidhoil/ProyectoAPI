@@ -1,7 +1,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db.js');
 const crypto = require('node:crypto');
-
+const jwt = require('jsonwebtoken');
+const secret = require('../config/env.js');
 
 const User = sequelize.define('User', {
     username: {
@@ -52,6 +53,17 @@ User.validatePassword = function (password, user_salt, user_hash) {
         .pbkdf2Sync(password, user_salt, 10000, 512, "sha512")
         .toString("hex");
     return user_hash === hash;
+}
+
+User.generateJWT = function (user) {
+    const today = new Date();
+    const exp = new Date();
+    exp.setDate(today.getDate() + 5);
+
+    return jwt.sign({
+        user: user.username,
+        exp: parseInt(exp.getTime())
+    }, secret);
 }
 
 module.exports = User;

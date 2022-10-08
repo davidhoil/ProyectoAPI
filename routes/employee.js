@@ -6,11 +6,12 @@ const {
     updateEmployee,
     deleteEmployee
 } = require('../controllers/employee.js');
+const auth = require('../config/auth.js');
 
-router.get('/', getEmployees);
-router.get('/:id', getEmployee);
-router.post('/', createEmployee);
-router.patch('/:id', updateEmployee);
-router.delete('/:id', deleteEmployee);
+router.get('/', auth.optional, getEmployees);
+router.get('/:id', auth.required, getEmployee);
+router.post('/', auth.required, createEmployee);
+router.patch('/:id', auth.required, updateEmployee);
+router.delete('/:id', auth.isAdmin, deleteEmployee);
 
 module.exports = router; 

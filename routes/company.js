@@ -6,11 +6,12 @@ const {
     updateCompany,
     deleteCompany
 } = require('../controllers/company.js');
+const auth = require('../config/auth.js');
 
-router.get('/', getCompanys);
-router.get('/:id', getCompany);
-router.post('/', createCompany);
-router.patch('/:id', updateCompany);
-router.delete('/:id', deleteCompany);
+router.get('/', auth.optional, getCompanys);
+router.get('/:id', auth.required, getCompany);
+router.post('/', auth.required, createCompany);
+router.patch('/:id', auth.required, updateCompany);
+router.delete('/:id', auth.isAdmin, deleteCompany);
 
 module.exports = router;

@@ -28,9 +28,13 @@ async function logIn(req, res) {
         return res.status(404).json({ error: "User not Found" });
     }
     if (User.validatePassword(body['password'], user.password_salt, user.password_hash)) {
-        return res.status(200).json({ mensaje: "Welcome !" });
+        return res.status(200).json({
+            user: user.username,
+            email: user.email,
+            token: User.generateJWT(user)
+        }); //jwt
     } else {
-        return res.status(400).json({ error: "Wrong Password" });
+        return res.status(400).json({ error: "Contraseña equivocada" });
     }
 }
 
