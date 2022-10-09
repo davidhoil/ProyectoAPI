@@ -6,8 +6,8 @@ https://proyectoapi-f2.herokuapp.com
 ### Documentacion:
 https://proyectoapi-f2.herokuapp.com/docs
 
-### Otros
-singUp(Usuario JSON):
+### Otros:
+singUp (Usuario JSON):
 {
   "username": "string",
   "name": "string",
@@ -16,7 +16,7 @@ singUp(Usuario JSON):
   "password": "string"
 }
 
-logIN(JSON):
+logIn (JSON):
 {
   "username": "string",
   "password": "string"
