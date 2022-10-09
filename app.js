@@ -11,11 +11,12 @@ const swaggerUI= require('swagger-ui-express');
 const app = express();
 app.use(express.json());
 app.use(auth.optional);
-app.use('/', routes);
+
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
+app.use('/', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 
+app.use('/', routes);
 
 try {
     sequelize.authenticate();

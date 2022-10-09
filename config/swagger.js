@@ -1,8 +1,9 @@
 const options = {
     swaggerDefinition: {
         info: {
-            version: "1.0.0",
-            title: "Proyecto API"
+            version: "1.0.1",
+            title: "Proyecto API",
+            description: "Proyecto desarrollado para la fase 2"
         },
         components: {
             securitySchemes: {
