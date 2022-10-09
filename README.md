@@ -1,7 +1,9 @@
 # ProyectoAPI
+DOCUMENTACION:
+https://proyectoapi-f2.herokuapp.com/docs
+
 
 singUp(Usuario JSON):
-
 {
   "username": "string",
   "name": "string",
@@ -10,7 +12,7 @@ singUp(Usuario JSON):
   "password": "string"
 }
 
-logIN:
+logIN(JSON):
 {
   "username": "string",
   "password": "string"
