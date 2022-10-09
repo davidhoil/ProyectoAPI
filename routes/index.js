@@ -5,7 +5,8 @@ const department = require('./department.js');
 const user = require('./user.js');
 
 router.get('/', (req, res) => {
-    res.json({ 'info': 'Welcome to Proyect API' });
+    res.json({ 'INFO': 'Welcome to Proyect API' ,
+     'IMPORTANT': 'Go to this route https://proyectoapi-f2.herokuapp.com/docs' });
 });
 
 router.use('/employee', employee);

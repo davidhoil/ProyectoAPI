@@ -1,6 +1,6 @@
 # ProyectoAPI
 DOCUMENTACION:
-https://proyectoapi-f2.herokuapp.com
+https://proyectoapi-f2.herokuapp.com/docs
 
 
 singUp(Usuario JSON):
