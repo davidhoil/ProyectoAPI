@@ -17,6 +17,9 @@ _Software necesario para ejecutar el proyecto_
     - Tener git de forma local
 ```
 
+### Documentacion:
+https://proyectoapi-f2.herokuapp.com/docs
+
 _Conoce el Modelo y la Arquitectura de la API_
 
 ![Image text](https://cdn.discordapp.com/attachments/997299256291491874/1028597372860772403/modelooo.jpg)
@@ -56,7 +59,6 @@ _IMPORTANTE - Antes de continuar presta atención_
     - Para Crear ya sea un Employee, Department o Compañy debes estar loggeado
     - Para Acualizar ya sea un Employee, Department o Compañy debes estar loggeado
     - Para Eliminar ya sea un Employee, Department o Compañy debes loggearte con un usuario el cual su username es Admin
-    -SI HAY MAS COSAS QUE NO SE DEBEN DE HACER, ESCRIBELAS
 ```
 
 ## Registrarse (Sign up)
